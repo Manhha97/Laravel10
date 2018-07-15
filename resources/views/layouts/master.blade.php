@@ -7,6 +7,10 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <!-- STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('blog_assets/css/bootstrap.css') }}">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('blog_assets/css/slippry.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('blog_assets/css/fonts.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('blog_assets/css/style.css') }}">
@@ -55,16 +59,21 @@
     	<nav class="menu-desktop menu-sticky">
     
             <ul class="tada-menu">
-                     <li><a href="#" class="active">HOME <i class="icon-arrow-down8"></i></a>
+                <li><a href="{{asset('')}}" class="active">HOME <i class="icon-arrow-down8"></i></a>
+                @foreach($categories as $category)
+                <li><a href="{{route('category',$category->slug)}}" class="active">{{$category->name}}<i class="icon-arrow-down8"></i></a></li>
+                @endforeach
+
+                     <!-- <li><a href="#" class="active">HOME <i class="icon-arrow-down8"></i></a>
                         <ul class="submenu">
-                        	<li><a href="home-1-column.html">Home 1 Column</a></li>
+                            <li><a href="home-1-column.html">Home 1 Column</a></li>
                             <li><a href="index.html" class="active">Home 1 Column + Sidebar</a></li>                            
                             <li><a href="home-2-columns-with-sidebar.html">Home 2 Columns + Sidebar</a></li>
                             <li><a href="home-2-columns.html">Home 2 Columns</a></li>
                             <li><a href="home-3-columns.html">Home 3 Columns</a></li>                                                                      
                         </ul>
-                    </li>
-                    <li><a href="#">FEATURES <i class="icon-arrow-down8"></i></a>
+                                         </li>
+                                         <li><a href="#">FEATURES <i class="icon-arrow-down8"></i></a>
                         <ul class="submenu">
                             <li><a href="page.html">Page</a></li>
                             <li><a href="page-with-right-sidebar.html">Page + Right Sidebar</a></li>
@@ -83,18 +92,18 @@
                                 </ul>
                             </li>                                                                                            
                         </ul>                
-                    </li>                                     
-                    <li><a href="#">BLOG <i class="icon-arrow-down8"></i></a>
+                                         </li>                                     
+                                         <li><a href="#">BLOG <i class="icon-arrow-down8"></i></a>
                         <ul class="submenu">
-                        	<li><a href="blog-1-column.html">Blog 1 Column</a></li>
+                            <li><a href="blog-1-column.html">Blog 1 Column</a></li>
                             <li><a href="blog-1-column-with-sidebar.html">Blog + Sidebar</a></li>                            
                             <li><a href="blog-2-columns-with-sidebar.html">Blog 2 Columns + Sidebar</a></li>
                             <li><a href="blog-2-columns.html">Blog 2 Columns</a></li>
                             <li><a href="blog-3-columns.html">Blog 3 Columns</a></li>                                                                      
                         </ul>                
-                    </li> 
-                    <li><a href="about-us.html">ABOUT US</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                                         </li> 
+                                         <li><a href="about-us.html">ABOUT US</a></li>
+                                         <li><a href="contact.html">CONTACT</a></li> -->
             </ul>
         
         </nav>
